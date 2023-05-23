@@ -1,0 +1,16 @@
+{
+  "manifestVersion": 1,
+  "id": "my-azure-devops-extension",
+  "name": "My Azure DevOps Extension",
+  "version": "1.0.0",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "index.html"
+    }
+  }
+}

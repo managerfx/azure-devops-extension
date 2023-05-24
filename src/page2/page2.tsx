@@ -3,6 +3,7 @@ import * as SDK from "azure-devops-extension-sdk";
 
 import { Header } from "azure-devops-ui/Header";
 import { Page } from "azure-devops-ui/Page";
+import ReactDOM = require("react-dom");
 
 
 class Page2 extends React.Component<{}, {}> {
@@ -25,3 +26,5 @@ class Page2 extends React.Component<{}, {}> {
         );
     }
 }
+
+ReactDOM.render(<Page2 />, document.getElementById("root"));

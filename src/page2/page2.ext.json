@@ -1,0 +1,13 @@
+{
+  "contributions": [
+    {
+      "id": "page2-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [".hello-world-hub-group"],
+      "properties": {
+        "name": "Page2",
+        "uri": "dist/page2/page2.html"
+      }
+    }
+  ]
+}

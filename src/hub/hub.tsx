@@ -5,7 +5,6 @@ import * as SDK from "azure-devops-extension-sdk";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Root from "./root/FirstPageComponent";
 import ErrorPage from "../error-page";
 import SecondPageComponent from "./main/SecondPageComponent";
 import FirstPageComponent from "./root/FirstPageComponent";

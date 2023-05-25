@@ -17,7 +17,6 @@ import { CRoute } from "../routes-paths";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
     errorElement: <ErrorPage />,
   },
   {

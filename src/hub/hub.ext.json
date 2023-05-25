@@ -21,6 +21,15 @@
         "name": "hub.html!",
         "uri": "dist/hub/hub.html"
       }
+    },
+    {
+      "id": "test_second_page-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [".hello-world-hub-group"],
+      "properties": {
+        "name": "Direct second page",
+        "uri": "dist/hub/main"
+      }
     }
   ]
 }

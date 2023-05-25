@@ -5,9 +5,14 @@ import * as SDK from "azure-devops-extension-sdk";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Root from "./root/root";
+import Root from "./root/FirstPageComponent";
 import ErrorPage from "../error-page";
-import Main from "./main/main";
+import SecondPageComponent from "./main/SecondPageComponent";
+import FirstPageComponent from "./root/FirstPageComponent";
+import { Page } from "azure-devops-ui/Page";
+import { Header, TitleSize } from "azure-devops-ui/Header";
+import { IHeaderCommandBarItem } from "azure-devops-ui/HeaderCommandBar";
+import { CRoute } from "../routes-paths";
 
 const router = createBrowserRouter([
   {
@@ -16,15 +21,21 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/dist/hub/hub.html",
-    element: <Root />,
+    path: CRoute.FirstPage,
+    element: <FirstPageComponent />,
   },
   {
-    path: "/dist/hub/main",
-    element: <Main />,
+    path: CRoute.SecondPage,
+    element: <SecondPageComponent />,
   },
 ]);
 
+const commandBarItemsSimple: IHeaderCommandBarItem[] = [
+  {
+    id: "#1",
+    text: "Button1",
+  },
+];
 
 class Hub extends React.Component<{}> {
   constructor(props: {}) {
@@ -38,12 +49,19 @@ class Hub extends React.Component<{}> {
   public render(): JSX.Element {
     return (
       <React.StrictMode>
+        <Page>
+          <Header
+            title={"My simple Extension"}
+            commandBarItems={commandBarItemsSimple}
+            titleSize={TitleSize.Medium}
+            titleIconProps={{ iconName: "OpenSource" }}
+            titleAriaLevel={3}
+          />
+        </Page>
         <RouterProvider router={router} />
       </React.StrictMode>
     );
   }
-
-
 }
 
 ReactDOM.render(<Hub />, document.getElementById("root"));
